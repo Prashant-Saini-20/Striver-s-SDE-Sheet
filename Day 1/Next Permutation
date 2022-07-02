@@ -12,9 +12,7 @@ public:
                     }
                     else x--;
                 }
-                int temp=nums[x];
-                nums[x]=nums[i-1];
-                nums[i-1]=temp;
+                swap(nums[x],nums[i-1]);
                 reverse(nums.begin()+i,nums.end());
                 flag=1;
                 break;
