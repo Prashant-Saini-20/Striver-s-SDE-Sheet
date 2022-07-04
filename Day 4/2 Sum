@@ -1,0 +1,25 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<pair<int,int>> myArray;
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            myArray.push_back({nums[i],i});
+        }
+        sort(myArray.begin(),myArray.end());
+        vector<int> ans;
+        int i=0,j=n-1;
+        while(i<j){
+            if(myArray[i].first+myArray[j].first==target){
+                ans.push_back(myArray[i].second);
+                ans.push_back(myArray[j].second);
+                break;
+            }
+            else if(myArray[i].first+myArray[j].first>target){
+                j--;
+            }
+            else i++;
+        }
+        return ans;
+    }
+};
