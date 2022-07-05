@@ -1,0 +1,19 @@
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        /*
+        if i need first mid 
+        then slow=head, fast=head->next;
+
+        if i need second mid
+        then slow=head, fast=head;
+        */
+        ListNode* s=head;
+        ListNode* f=head;
+        while(f&&f->next){
+            s=s->next;
+            f=f->next->next;
+        }
+        return s;
+    }
+};
